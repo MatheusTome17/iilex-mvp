@@ -1,0 +1,19 @@
+{
+  "name": "iiLex MVP Dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "forwardPorts": [8080, 8000],
+  "portsAttributes": {
+    "8080": { "label": "Frontend", "onAutoForward": "openBrowser" },
+    "8000": { "label": "API", "onAutoForward": "notify" }
+  },
+  "postCreateCommand": "apt-get update && apt-get install -y php php-cli php-mbstring php-curl php-xml php-sqlite3 && chmod +x .devcontainer/start.sh",
+  "postStartCommand": ".devcontainer/start.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "formulahendry.code-runner"
+      ]
+    }
+  }
+}
